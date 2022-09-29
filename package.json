@@ -1,6 +1,6 @@
 {
     "name": "@flexent/errors",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "Generic Errors with standardized name and status",
     "type": "module",
     "sideEffects": false,
