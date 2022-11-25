@@ -51,3 +51,11 @@ export class ServerError extends Exception {
         super(message);
     }
 }
+
+export class InvalidStateError extends Exception {
+    override status = 500;
+}
+
+export class InitializationError extends Exception {
+    override status = 500;
+}
