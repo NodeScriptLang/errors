@@ -1,6 +1,6 @@
 {
     "name": "@nodescript/errors",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Generic Errors with standardized name and status",
     "type": "module",
     "sideEffects": false,

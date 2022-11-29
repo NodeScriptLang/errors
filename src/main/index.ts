@@ -1,4 +1,4 @@
-import { Exception } from '@flexent/exception';
+import { Exception } from '@nodescript/exception';
 
 export class ClientError extends Exception {
     override status = 400;
