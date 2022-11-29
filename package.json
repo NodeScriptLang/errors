@@ -41,6 +41,6 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
-        "@nodescript/exception": "^2.0.7"
+        "@nodescript/exception": "^2.0.8"
     }
 }
