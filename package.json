@@ -1,5 +1,5 @@
 {
-    "name": "@flexent/errors",
+    "name": "@nodescript/errors",
     "version": "1.0.1",
     "description": "Generic Errors with standardized name and status",
     "type": "module",
@@ -26,13 +26,13 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/flexent/errors.git"
+        "url": "git+ssh://git@github.com/nodescript/errors.git"
     },
     "keywords": [],
     "author": "Boris Okunskiy",
     "license": "ISC",
     "devDependencies": {
-        "@flexent/eslint-config": "^1.0.3",
+        "@nodescript/eslint-config": "^1.0.3",
         "@types/mocha": "^8.2.3",
         "@types/node": "^16.3.1",
         "eslint": "^8.24.0",
@@ -41,6 +41,6 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
-        "@flexent/exception": "^2.0.7"
+        "@nodescript/exception": "^2.0.7"
     }
 }
