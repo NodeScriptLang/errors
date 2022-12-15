@@ -1,61 +1,53 @@
-import { Exception } from '@nodescript/exception';
-
-export class ClientError extends Exception {
-    override status = 400;
+export class ClientError extends Error {
+    override name = this.constructor.name;
+    status = 400;
+    override message = 'Client error';
 }
 
-export class NotFoundError extends Exception {
-    override status = 404;
-
-    constructor(message: string = 'Resource not found') {
-        super(message);
-    }
+export class NotFoundError extends Error {
+    override name = this.constructor.name;
+    status = 404;
+    override message = 'Resource not found';
 }
 
-export class ConflictError extends Exception {
-    override status = 409;
-
-    constructor(message: string = 'The requested operation results in a conflict, please try again soon') {
-        super(message);
-    }
+export class ConflictError extends Error {
+    override name = this.constructor.name;
+    status = 409;
+    override message = 'The requested operation results in a conflict, please retry';
 }
 
-export class AuthenticationRequiredError extends Exception {
-    override status = 401;
-
-    constructor() {
-        super('Authentication is required');
-    }
+export class AuthenticationRequiredError extends Error {
+    override name = this.constructor.name;
+    status = 401;
+    override message = 'Authentication is required';
 }
 
-export class InvalidAuthenticationError extends Exception {
-    override status = 401;
-
-    constructor(message = 'Invalid authentication') {
-        super(message);
-    }
+export class InvalidAuthenticationError extends Error {
+    override name = this.constructor.name;
+    status = 401;
+    override message = 'Invalid authentication';
 }
 
-export class AccessDeniedError extends Exception {
-    override status = 403;
-
-    constructor(message = 'Access denied') {
-        super(message);
-    }
+export class AccessDeniedError extends Error {
+    override name = this.constructor.name;
+    status = 403;
+    override message = 'Access denied';
 }
 
-export class ServerError extends Exception {
-    override status = 500;
-
-    constructor(message = 'The request cannot be processed') {
-        super(message);
-    }
+export class ServerError extends Error {
+    override name = this.constructor.name;
+    status = 500;
+    override message = 'The request cannot be processed';
 }
 
-export class InvalidStateError extends Exception {
-    override status = 500;
+export class InvalidStateError extends Error {
+    override name = this.constructor.name;
+    status = 500;
+    override message = 'Invalid state';
 }
 
-export class InitializationError extends Exception {
-    override status = 500;
+export class InitializationError extends Error {
+    override name = this.constructor.name;
+    status = 500;
+    override message = 'Initialization error';
 }
