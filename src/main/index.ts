@@ -1,53 +1,76 @@
-export class ClientError extends Error {
-    override name = this.constructor.name;
-    status = 400;
-    override message = 'Client error';
-}
-
-export class NotFoundError extends Error {
-    override name = this.constructor.name;
-    status = 404;
-    override message = 'Resource not found';
-}
-
-export class ConflictError extends Error {
-    override name = this.constructor.name;
-    status = 409;
-    override message = 'The requested operation results in a conflict, please retry';
-}
-
-export class AuthenticationRequiredError extends Error {
-    override name = this.constructor.name;
-    status = 401;
-    override message = 'Authentication is required';
-}
-
-export class InvalidAuthenticationError extends Error {
-    override name = this.constructor.name;
-    status = 401;
-    override message = 'Invalid authentication';
-}
-
-export class AccessDeniedError extends Error {
-    override name = this.constructor.name;
-    status = 403;
-    override message = 'Access denied';
-}
-
-export class ServerError extends Error {
+export class BaseError extends Error {
     override name = this.constructor.name;
     status = 500;
-    override message = 'The request cannot be processed';
+
+    get defaultMessage() {
+        return 'An unknown error has occurred';
+    }
+
+    constructor(message?: string) {
+        super();
+        this.message = message || this.defaultMessage;
+    }
 }
 
-export class InvalidStateError extends Error {
-    override name = this.constructor.name;
-    status = 500;
-    override message = 'Invalid state';
+export class ClientError extends BaseError {
+    override status = 400;
+    override get defaultMessage() {
+        return 'Client error';
+    }
 }
 
-export class InitializationError extends Error {
-    override name = this.constructor.name;
-    status = 500;
-    override message = 'Initialization error';
+export class NotFoundError extends BaseError {
+    override status = 404;
+    override get defaultMessage() {
+        return 'Resource not found';
+    }
+}
+
+export class ConflictError extends BaseError {
+    override status = 409;
+    override get defaultMessage() {
+        return 'The requested operation results in a conflict';
+    }
+}
+
+export class AuthenticationRequiredError extends BaseError {
+    override status = 401;
+    override get defaultMessage() {
+        return 'Authentication is required';
+    }
+}
+
+export class InvalidAuthenticationError extends BaseError {
+    override status = 401;
+    override get defaultMessage() {
+        return 'Invalid authentication';
+    }
+}
+
+export class AccessDeniedError extends BaseError {
+    override status = 403;
+    override get defaultMessage() {
+        return 'Access denied';
+    }
+}
+
+export class ServerError extends BaseError {
+    override status = 500;
+    override get defaultMessage() {
+        return 'The request cannot be processed';
+    }
+}
+
+export class InvalidStateError extends BaseError {
+    override status = 500;
+    override get defaultMessage() {
+        return 'Invalid state';
+    }
+}
+
+export class InitializationError extends BaseError {
+    override status = 500;
+    override get defaultMessage() {
+        return 'Initialization error';
+    }
 }
