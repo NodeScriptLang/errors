@@ -33,6 +33,13 @@ export class ConflictError extends BaseError {
     }
 }
 
+export class RequestSizeExceededError extends BaseError {
+    override status = 413;
+    override get defaultMessage() {
+        return 'The request payload exceeds the limit';
+    }
+}
+
 export class AuthenticationRequiredError extends BaseError {
     override status = 401;
     override get defaultMessage() {
