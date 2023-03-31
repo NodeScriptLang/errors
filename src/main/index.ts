@@ -33,6 +33,13 @@ export class ConflictError extends BaseError {
     }
 }
 
+export class UniqueConstraintViolationError extends BaseError {
+    override status = 409;
+    override get defaultMessage() {
+        return 'The requested operation results in an unique constraint violation';
+    }
+}
+
 export class RequestSizeExceededError extends BaseError {
     override status = 413;
     override get defaultMessage() {
