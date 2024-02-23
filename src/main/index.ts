@@ -68,6 +68,13 @@ export class AccessDeniedError extends BaseError {
     }
 }
 
+export class RateLimitExceededError extends BaseError {
+    override status = 429;
+    override get defaultMessage() {
+        return 'Rate Limit Exceeded';
+    }
+}
+
 export class ServerError extends BaseError {
     override status = 500;
     override get defaultMessage() {
